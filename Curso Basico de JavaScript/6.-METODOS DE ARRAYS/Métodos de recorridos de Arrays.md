@@ -12,6 +12,7 @@ var articulos = [
 // Metodos para recorrer arrays
 
 // METODO Filter
+
 /_ Válida si es un true o false para poder meterlos al nuevo array, y éste método no modifica el array original _/;
 
 var articulosFiltrados = articulos.filter(function (articulo) {
