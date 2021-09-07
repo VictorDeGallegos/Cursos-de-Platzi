@@ -64,3 +64,50 @@ console.log(globalVar);
 const a = "b";
 a = "a";
 console.log(a);
+
+let name = "victor";
+let age = 21;
+
+//es5
+obj = { name: name, age: age };
+
+//es6
+obj2 = { name, age };
+console.log(obj2);
+
+const names = [
+  { name: "Victor", age: 21 },
+  { name: "Hugo", age: 21 },
+  { name: "Karla", age: 21 },
+  { name: "Maria", age: 21 },
+];
+
+let listOfNames = names.map(function (item) {
+  console.log(item.name);
+});
+
+let listOfNames2 = names.map((item) => console.log(item.name));
+
+const listOfNames3 = (name, age, country) =>
+  console.log(item.name, age, country);
+
+const listOfNames4 = (name) => {
+  console.log(item.name);
+};
+
+const square = (num) => num * num;
+
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if (false) {
+      resolve("Hey!");
+    } else {
+      reject("Ups!");
+    }
+  });
+};
+
+helloPromise()
+  .then((response) => console.log(response))
+  .then(() => console.log("hola"))
+  .catch((err) => console.log(err));
