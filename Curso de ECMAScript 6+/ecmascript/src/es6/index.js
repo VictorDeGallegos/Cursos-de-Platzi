@@ -26,7 +26,7 @@ let lorem =
 
 // es6
 let lorem2 = `otra frase epica que necesitamos
-  ahora es otra frase epica
+ahora es otra frase epica
   `;
 
 console.log(lorem);
