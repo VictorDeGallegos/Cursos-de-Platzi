@@ -1,0 +1,19 @@
+{
+  "name": "scope-closure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorDeGallegos/Fronted-con-Angular-PLATZI.git"
+  },
+  "author": "VictorDeGallegos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VictorDeGallegos/Fronted-con-Angular-PLATZI/issues"
+  },
+  "homepage": "https://github.com/VictorDeGallegos/Fronted-con-Angular-PLATZI#readme"
+}
