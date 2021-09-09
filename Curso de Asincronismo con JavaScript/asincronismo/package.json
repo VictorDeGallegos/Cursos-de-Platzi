@@ -1,0 +1,27 @@
+{
+  "name": "asincronismo",
+  "version": "1.0.0",
+  "description": "trabajar con asincronismos en JavaScript",
+  "main": "src/index.js",
+  "scripts": {
+    "callback": "node src/callback/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorDeGallegos/Cursos-de-Platzi.git"
+  },
+  "keywords": [
+    "callbacks",
+    "promise",
+    "async"
+  ],
+  "author": "VictorDeGallegos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VictorDeGallegos/Cursos-de-Platzi/issues"
+  },
+  "homepage": "https://github.com/VictorDeGallegos/Cursos-de-Platzi#readme",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}
