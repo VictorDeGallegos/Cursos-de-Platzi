@@ -1,5 +1,6 @@
+//CLOSURES QUE RETORNAN OBJETOS
 const person = () => {
-  let saveName = "Name:";
+  let saveName = "Name:"; // saveName es totalmente privado
   return {
     getName: () => saveName,
     setName: (name) => {
