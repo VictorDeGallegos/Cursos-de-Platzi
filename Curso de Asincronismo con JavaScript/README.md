@@ -11,6 +11,7 @@
     - [Implementando Promesas](#implementando-promesas)
     - [Resolver problema con Promesas](#resolver-problema-con-promesas)
     - [Conociendo Async/await](#conociendo-asyncawait)
+    - [Resolver problemas con Async/await](#resolver-problemas-con-asyncawait)
 
 ## **Apropiar los conceptos de asincronismo**
 
@@ -386,7 +387,17 @@ function resta(a, b) {
 suma(5, 5);
 resta(10, 5);
 ```
+
 En primer ejemplo tenemos 2 funciones “normales” una suma y una resta, y nos mostrarán sus resultados en el orden en el que se lo solicitemos. En el primer ejemplo se llama a la función suma y luego a la función resta; por lo que los resultados serán 10 y 5 en ese orden.
 
 En el segundo ejemplo tenemos las mismas 2 funciones en el mismo orden y llamadas en el mismo orden pero; la diferencia es que primero se mostrara el resultado de resta y luego el de suma (5 y 10 ).
 Esto se debe a que a la función suma le dimos el super poder de async y await el cual consiste en mandar a esa función a la cola de tareas y ya cuando la pila de ejecución esté libre mostrar su resultado
+
+### Resolver problemas con Async/await
+
+Ya conociendo Async/Await vamos a implementarlo en el desafío.
+
+Creamos una función async con su estructura try()catch . Dentro de catch() pedimos que ejecuten tres peticiones. Para acceder a ellas colocamos la palabra reservada await y llamando nuestro fetchData indicamos dentro de sus parámetros la ruta que se debe tomar para acceder a la información que queremos imprimir en cada una de nuestras constantes.
+⠀⠀
+Después imprimimos los resultados. En catch() colocamos que código que queremos imprimir en caso de que no se cumpla la petición de try() . Ya por último llamamos la función anotherFunction() para ejecutarla.
+
