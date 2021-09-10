@@ -41,7 +41,11 @@ Un ejemplo fácil es comparando asincronismo vs sincronismo: En lenguajes síncr
 2. Obtener el nombre de cada personaje.
 3. Obtener el nombre de la Dimensión a la cual pertenece cada personaje.
 
-[Let´s start! 😄](https://github.com/VictorDeGallegos/Cursos-de-Platzi/blob/main/Curso%20de%20Asincronismo%20con%20JavaScript/asincronismo/src/callback/challenge.js)
+[callback 😄](https://github.com/VictorDeGallegos/Cursos-de-Platzi/blob/main/Curso%20de%20Asincronismo%20con%20JavaScript/asincronismo/src/callback/challenge.js)
+
+[promesas 😄](https://github.com/VictorDeGallegos/Cursos-de-Platzi/blob/main/Curso%20de%20Asincronismo%20con%20JavaScript/asincronismo/src/promise/challenge.js)
+
+[async 😄](https://github.com/VictorDeGallegos/Cursos-de-Platzi/blob/main/Curso%20de%20Asincronismo%20con%20JavaScript/asincronismo/src/async/challenge.js)
 
 ## **Desarrollar soluciones**
 
@@ -285,6 +289,7 @@ Promise.all([somethingWillHappen(),somethingWillHappen2()])
 
 ### Resolver problema con Promesas
 
+
 **fetchData.js:**
 La funcion
 ```javascript
@@ -400,4 +405,3 @@ Ya conociendo Async/Await vamos a implementarlo en el desafío.
 Creamos una función async con su estructura try()catch . Dentro de catch() pedimos que ejecuten tres peticiones. Para acceder a ellas colocamos la palabra reservada await y llamando nuestro fetchData indicamos dentro de sus parámetros la ruta que se debe tomar para acceder a la información que queremos imprimir en cada una de nuestras constantes.
 ⠀⠀
 Después imprimimos los resultados. En catch() colocamos que código que queremos imprimir en caso de que no se cumpla la petición de try() . Ya por último llamamos la función anotherFunction() para ejecutarla.
-
