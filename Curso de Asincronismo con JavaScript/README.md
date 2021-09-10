@@ -14,6 +14,8 @@
     - [Resolver problemas con Async/await](#resolver-problemas-con-asyncawait)
   - [**Diferencias entre Callbacks, Promesas, Async/Await**](#diferencias-entre-callbacks-promesas-asyncawait)
     - [Callbacks Vs Promesas Vs Async/Await](#callbacks-vs-promesas-vs-asyncawait)
+  - [**Conclusiones**](#conclusiones)
+    - [Ventajas y Desventajas](#ventajas-y-desventajas)
 
 ## **Apropiar los conceptos de asincronismo**
 
@@ -420,3 +422,28 @@ Desventajas: Posible error si no se retorna el siguiente llamado. No corre en to
 
 **Async-Await** --> Ventajas: Se puede usar try-catch . Código más ordenado e intuitivo.
 Desventajas: No corre en todos los navegadores (se requiere un transpilador).
+
+## **Conclusiones**
+
+### Ventajas y Desventajas
+
+**Callbacks**
+V = Es simple una función que recibe otra función
+V = Son universales
+D = Composición tosca
+D = Callbacks Hell
+D = Flujo poco intuitivo
+D = Debemos pensar que estamos haciendo código para humanos y debe ser facil de leer
+D = if FecthData, if FecthData, if FecthData y se vuelve tedioso y no se maneja excepciones
+
+**Promise**
+V = Fácilmente enlazable then y return, then y return y asi
+V = Es poderoso // es muy recomendado para desarrolladores
+D = NO maneja excepciones si no maneja un catch al final y seremos propensos a errores
+D = Requiere un polyfile para ser transpilados y ser interpretados en todos los navegadores //Babbel
+
+**Async Await**
+V = El tradicional try - catch y manejar las excepciones de manera mas fluida
+V = Mas fáciles de leer que sucedera que va a suceder
+D = Ese poder que podemos decir es decir si queremos algo debemos esperar que algo suceda
+D = Requiere un polyfile para ser transpilados y ser interpretados en todos los navegadores
