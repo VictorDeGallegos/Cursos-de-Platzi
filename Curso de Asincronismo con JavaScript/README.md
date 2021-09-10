@@ -10,6 +10,7 @@
     - [Múltiples Peticiones a un API con Callbacks](#múltiples-peticiones-a-un-api-con-callbacks)
     - [Implementando Promesas](#implementando-promesas)
     - [Resolver problema con Promesas](#resolver-problema-con-promesas)
+    - [Conociendo Async/await](#conociendo-asyncawait)
 
 ## **Apropiar los conceptos de asincronismo**
 
@@ -351,3 +352,41 @@ fetchData(API)
     console.log(err);
   })
 ```
+
+### Conociendo Async/await
+
+Async/await no es mas que Syntax Sugar. Es una manera mas bonita de hacer lo mismo que estabamos haciendo con .then(). La clave es recordar que si una función regresa un promesa, podemos usar el keyword await, que le indicia al navegador: “Espera a que la promesa se resuelva y almacena su resultado en esta variable”. Todo esto toma lugar dentro de una función asincrona, asi que usamos async para lograr esto
+
+```javascript
+// Primer ejemplo------->>>>>
+function suma(a, b) {
+  let c = a + b;
+  console.log(c);
+}
+
+function resta(a, b) {
+  var c = a - b;
+  console.log(c);
+}
+
+suma(5, 5);
+resta(10, 5);
+
+// Segundo ejemplo ------>>>>>
+const suma = async (a, b) => {
+  let c = (await a) + b;
+  console.log(c);
+};
+
+function resta(a, b) {
+  var c = a - b;
+  console.log(c);
+}
+
+suma(5, 5);
+resta(10, 5);
+```
+En primer ejemplo tenemos 2 funciones “normales” una suma y una resta, y nos mostrarán sus resultados en el orden en el que se lo solicitemos. En el primer ejemplo se llama a la función suma y luego a la función resta; por lo que los resultados serán 10 y 5 en ese orden.
+
+En el segundo ejemplo tenemos las mismas 2 funciones en el mismo orden y llamadas en el mismo orden pero; la diferencia es que primero se mostrara el resultado de resta y luego el de suma (5 y 10 ).
+Esto se debe a que a la función suma le dimos el super poder de async y await el cual consiste en mandar a esa función a la cola de tareas y ya cuando la pila de ejecución esté libre mostrar su resultado
