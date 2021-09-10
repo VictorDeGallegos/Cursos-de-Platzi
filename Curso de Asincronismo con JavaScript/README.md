@@ -12,6 +12,8 @@
     - [Resolver problema con Promesas](#resolver-problema-con-promesas)
     - [Conociendo Async/await](#conociendo-asyncawait)
     - [Resolver problemas con Async/await](#resolver-problemas-con-asyncawait)
+  - [**Diferencias entre Callbacks, Promesas, Async/Await**](#diferencias-entre-callbacks-promesas-asyncawait)
+    - [Callbacks Vs Promesas Vs Async/Await](#callbacks-vs-promesas-vs-asyncawait)
 
 ## **Apropiar los conceptos de asincronismo**
 
@@ -405,3 +407,16 @@ Ya conociendo Async/Await vamos a implementarlo en el desafío.
 Creamos una función async con su estructura try()catch . Dentro de catch() pedimos que ejecuten tres peticiones. Para acceder a ellas colocamos la palabra reservada await y llamando nuestro fetchData indicamos dentro de sus parámetros la ruta que se debe tomar para acceder a la información que queremos imprimir en cada una de nuestras constantes.
 ⠀⠀
 Después imprimimos los resultados. En catch() colocamos que código que queremos imprimir en caso de que no se cumpla la petición de try() . Ya por último llamamos la función anotherFunction() para ejecutarla.
+
+## **Diferencias entre Callbacks, Promesas, Async/Await**
+
+### Callbacks Vs Promesas Vs Async/Await
+
+**Callbacks** --> Ventajas: Simple(una función que recibe otra función). Son universales, corren en cualquier navegador.
+Desventajas: Composición tediosa, anidando cada vez más elementos. Caer en Callback Hell.
+
+**Promesas** --> Ventajas: Facilmente enlazables .Then( return… ).Then - Fácil e intuitivo de leer.
+Desventajas: Posible error si no se retorna el siguiente llamado. No corre en todos los navegadores.
+
+**Async-Await** --> Ventajas: Se puede usar try-catch . Código más ordenado e intuitivo.
+Desventajas: No corre en todos los navegadores (se requiere un transpilador).
