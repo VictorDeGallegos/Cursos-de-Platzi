@@ -8,6 +8,7 @@
     - [Definicion de estructura Callback](#definicion-de-estructura-callback)
     - [Peticiones a APIs usando Callbacks](#peticiones-a-apis-usando-callbacks)
     - [Múltiples Peticiones a un API con Callbacks](#múltiples-peticiones-a-un-api-con-callbacks)
+    - [Implementando Promesas](#implementando-promesas)
 
 ## **Apropiar los conceptos de asincronismo**
 
@@ -37,7 +38,7 @@ Un ejemplo fácil es comparando asincronismo vs sincronismo: En lenguajes síncr
 2. Obtener el nombre de cada personaje.
 3. Obtener el nombre de la Dimensión a la cual pertenece cada personaje.
 
-Let´s start! 😄
+[Let´s start! 😄](https://github.com/VictorDeGallegos/Cursos-de-Platzi/blob/main/Curso%20de%20Asincronismo%20con%20JavaScript/asincronismo/src/callback/challenge.js)
 
 ## **Desarrollar soluciones**
 
@@ -208,4 +209,73 @@ fetchData(api, (error1, data1) => {
     });
   });
 });
+```
+
+### Implementando Promesas
+
+Para crear una promesa utilizamos la palabra reservada new seguida de la palabra Promise que es el constructor de la promesa. Este constructor recibe un único parámetro que es una función, la cuál a su vez, recibe otros dos parámetros, resolve y reject. El parámetro resolve se utiliza para cuando la promesa devuelve el valor correctamente mientras que reject, se usa en el que caso de que no funcione.
+
+Las promesas pueden suceder:
+
+- Ahora
+- En el futuro
+- Nunca
+
+```javascript
+//Crear funcion 
+const somethingWillHappen = () => {
+    //retornar una promesa con dos argumentos (resolve=si se ejecuta, reject=si se rechaza)
+    return new Promise((resolve, reject) => {
+        //si es verdadero, vamos a devolver hey
+        if (true) {
+            resolve('Hey!')
+        }
+        //si no entonces devolvemos wooops
+        else {
+            reject('Woooops!')
+        }
+    })
+}
+//ejecutamos la funcion
+somethingWillHappen()
+    //si estamos obteniendo un resolve
+    .then(response => console.log(response))
+    //si obtenemos un reject
+    .catch(err => console.error(err))
+
+//Crear segunda funcion
+const somethingWillHappen2 = () => {
+    // retuornamos la promesa
+    return new Promise((resolve, reject) => {
+        // Si es verdadero, devolvemos True en 2 segundos
+        if(true) {
+            setTimeout(() => {
+                resolve('True')
+            }, 2000)
+        } 
+        // Si no entonces devolvemos el error
+        // De esta forma "new Error" podemos debbugear mejor
+        else {
+            const error = new Error('Whoppps!')
+            reject(error)
+        }
+    })
+}
+//ejecutamos la Funcion 2
+somethingWillHappen2()
+    //Si obtenemos un resolve
+    .then(response => console.log(response))
+    //si obtenemos un reject
+    .catch(err => console.error(err))
+
+//ejecutamos todas las promesas
+Promise.all([somethingWillHappen(),somethingWillHappen2()])
+    //Si obtenemos un resolve
+    .then(response => {
+        console.log('Array of results', response);
+    })
+    //Si obtenemos un reject
+    .catch(err => {
+        console.error(err)
+    })
 ```
