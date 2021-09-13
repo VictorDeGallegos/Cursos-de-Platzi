@@ -1,0 +1,226 @@
+html,
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  background-color: #090909;
+}
+
+body::-webkit-scrollbar {
+  background-color: #282828;
+  width: 15px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #eeeb51;
+}
+
+.container {
+  padding: 0 15px;
+  flex-wrap: 5px;
+  max-width: 1100px;
+}
+
+.title {
+  font-size: 1.9em;
+}
+
+.img-fluid {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+  display: inline-flex;
+}
+
+.img-rick {
+  height: 700px;
+  justify-content: flex-end;
+}
+
+.social-networks {
+  padding: 10px 0;
+  font-size: 1.6em;
+  justify-content: space-between;
+}
+
+.social-networks > a {
+  color: #fff;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: #282828;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.social-networks > a:hover {
+  max-width: 100%;
+
+  color: #fff;
+  transition: 650ms;
+  box-shadow: inset 0 0 0 0px #fff, 0 0 0 1px #fff, 3px -3px 25px #1beabd,
+    -3px 3px 25px rgba(43, 233, 13, 255);
+}
+
+.social-networks > a + a {
+  margin-left: 5px;
+}
+
+.input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid;
+  border-radius: 25px;
+  color: white;
+  font-family: "Muli", sans-serif;
+  font-size: 23px;
+  height: 50px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 0px 50px;
+  width: 70%;
+  text-align: center;
+  margin-top: 10px;
+  box-shadow: 5rgba (255, 255, 255, 0.1);
+  transition: 600ms;
+}
+
+.input:focus {
+  box-shadow: inset 0 0 0 0px #fff, 0 0 0 1px #fff, 3px -3px 25px #1beabd,
+    -3px 3px 25px rgba(43, 233, 13, 255);
+  transition: 350ms;
+}
+.parallax {
+  font-size: 1.8rem;
+  background-position: 50% 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 130px 0;
+  position: relative;
+  color: #fff;
+}
+
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #282828;
+}
+
+.card-image {
+  position: relative;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.card-body {
+  position: relative;
+  padding: 5px;
+  color: #fff;
+}
+
+.card-body p {
+  font-size: 25px;
+}
+
+.card-body > h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 5px 0;
+}
+
+.alive,
+.dead,
+.unknown,
+.badge-top {
+  position: absolute;
+  padding: 0 10px;
+  border-radius: 5px;
+  transition: 0.2s;
+  font-size: 700;
+}
+
+.alive:hover,
+.dead:hover,
+.unknown:hover,
+.badge-top:hover {
+  transition: 0.2s;
+  cursor: pointer;
+  color: #1f1f1f;
+}
+
+.badge-top {
+  top: 10px;
+  left: 10px;
+  background-color: #222999;
+  color: #fff;
+  max-width: 65px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.badge-top:hover {
+  max-width: 100%;
+  background-color: #222a99f6;
+  color: #fff;
+}
+
+.alive {
+  background-color: #81ff28;
+  bottom: 10px;
+  right: 5px;
+  color: #1f1f1f;
+}
+
+.alive:hover {
+  background-color: #81ff28;
+  color: #1f1f1fd5;
+}
+
+.dead {
+  background-color: #f8261f;
+  bottom: 10px;
+  right: 5px;
+  color: #1f1f1f;
+}
+
+.dead:hover {
+  background-color: #f8261f;
+  color: #1f1f1f;
+}
+
+.unknown {
+  background-color: #28a5ff;
+  bottom: 10px;
+  right: 5px;
+  color: #1f1f1f;
+}
+
+.unknown:hover {
+  background-color: #28a5ff;
+}
+
+#cards-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
+  padding-top: 30px;
+}
+
+.todos {
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+}
+
+@media only screen and (min-width: 1100px) {
+  .container {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+  }
+}

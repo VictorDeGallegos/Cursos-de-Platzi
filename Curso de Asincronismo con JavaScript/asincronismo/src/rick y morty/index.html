@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/rick.ico"" type="image/x-icon">
+  <title>Rick and Morty</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+
+<body>
+
+  <section class="parallax" style="background-image: url('./img/fondo.png');">
+    <div class="container">
+      <h1 class="title">Rick And Morty With API</h1>
+      <p class="text-dark">Busqueda y consulta de los personajes de mi serie favorita por Async/Await.
+      </p>
+      <p class="text-dark">Se renderizaran todos los personaje de esta extraordinaria serie animada,</p>
+        dando a conocer su estado actual.</p>
+      <div class="social-networks">
+        <a target="_blank" href="https://www.facebook.com/hugo.gallegos.773981"><i class="fab fa-facebook-f"></i></a>
+        <a target="_blank" href="https://www.instagram.com/victor_de_gallegos/"><i class="fab fa-instagram"></i></a>
+        <a target="_blank" href="https://twitter.com/De_Gallegos_"><i class="fab fa-twitter"></i></a>
+        <a target="_blank" href="https://github.com/VictorDeGallegos"><i class="fab fa-github"></i></a>
+      </div>
+      <h3>Buscar personajes</h3>
+      <div id="searchWrapper">
+        <input type="text" name="searchBar" id ="searchBar" class="input" placeholder="Busca un personaje..." />
+      </div>
+
+      <h2 class="todos">Todos los personajes</h2>
+      <section id="cards-content" class="container"></section>
+
+      <script src="./js/utils/fetchData.js"></script>
+      <script src="./js/utils/cardGenerator.js"></script>
+      <script src="./js/index.js"></script>
+    </div>
+  </section>
+</body>
+
+</html>
