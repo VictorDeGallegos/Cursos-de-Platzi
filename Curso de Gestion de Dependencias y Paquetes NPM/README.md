@@ -12,6 +12,10 @@
     - [Ejecutar Tareas](#ejecutar-tareas)
     - [Solucion de Errores](#solucion-de-errores)
     - [Seguridad](#seguridad)
+  - [**Publicar un paquete**](#publicar-un-paquete)
+    - [Crear un paquete para NPM](#crear-un-paquete-para-npm)
+    - [Publicar un paquete en NPM](#publicar-un-paquete-en-npm)
+    - [Paquetes privados](#paquetes-privados)
 
 ## **Introduccion a NPM**
 
@@ -290,3 +294,104 @@ npm audit fix
 ```
 
 Y en caso de que esto no lo solucione, podemos ir actualizandolos de uno en uno.
+
+## **Publicar un paquete**
+
+### Crear un paquete para NPM
+
+Ejecutar el comando para saber donde estoy ubicado
+
+```bash
+pwd
+mkdir random-messages
+cd random-messages/
+git init
+npm init
+```
+
+Se crea el archivo index.js en la carpeta src
+
+```javascript
+// Se declara el arreglo
+const messages = [
+    "Karla",
+    "Maria",
+    "Victor",
+    "Hugo",
+    "Gallegos",
+    "Estrada"
+]
+
+//Crear función para enviar aleatoriamente  los nombres del arreglo
+const randomMsg = () => {
+    const message = messages[Math.floor(Math.random()*messages.length)]
+    console.log(message)
+}
+
+// Exportar como un módulo
+
+module.exports = { randomMsg }
+```
+
+Se debe crear una carpeta bin donde se crea ele archivo global.js (Configuración que se necesita)
+
+```javascript
+#!/usr/bin/env node
+// se va ejecutar dentro de bash
+
+//Variable que llama la funcion que exportamos
+let random = require('../src/index.js')
+
+//Ejecuto la funcion
+random.randomMsg()
+```
+
+Modifico el package.json y coloco la configuración de bin que necesito
+
+```json
+  "bin": {
+    "random-msg": "./bin/global.js"
+  },
+  "preferGlobal": true
+  ```
+
+### Publicar un paquete en NPM
+
+Primero se debe probar de forma local.
+
+```bash
+pwd
+sudo npm link
+#Se ejecuta la función
+random-msg
+```
+
+Otra forma de instalar el paquete
+
+```bash
+sudo npm install -g /Documentos/GitHub/Cursos-de-Platzi/Curso de Gestion de Dependencias y Paquetes NPM/random-message
+```
+
+Crear cuenta para poder subir el paquete - Npm.js <https://www.npmjs.com/>
+Verificar la cuenta que llega al correo electrónico registrado.
+
+Se loguea a la cuenta creada por consola y se publica el paquete.
+
+```bash
+npm adduser
+npm publish
+```
+
+### Paquetes privados
+
+Para mejorar nuestros paquete y que cuente con los requerimientos mínimos para serlo haremos lo siguiente:
+
+- crearemos un buen `README.md` en donde vamos a explicar lo que hará nuestro paquete osea toda nuestra documentación, además esto debe estar en ingles.
+- Ademas debemos Conectarlo a un repositorio de github
+- npm init ahora veremos que ya esta ligado a un repositorio, de igual forma podemos ver esta información en el package.json 
+
+`npm version <major |minor |patch>`
+- `npm version patch `
+   el resultado seria v1.0.1, muchas veces nos dira que debemos actualizar a la versión mas reciente de npm y lo hacemos con 
+- `sudo install -g npm` , si nos vamos al package veremos que la versión a cambiado, y para publicarlos volvemos a ejecutar el comando `npm publish`
+- `npm unpublish -f` para despublicar un paquete recuerda que debes estar ubicado en la carpeta raíz del proyecto
