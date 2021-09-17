@@ -14,6 +14,11 @@
     - [Decorators: aplicación en clases](#decorators-aplicación-en-clases)
     - [Decorators: aplicación en propiedades](#decorators-aplicación-en-propiedades)
     - [Decorators: aplicación en parámetros](#decorators-aplicación-en-parámetros)
+  - [**Preparando el entorno para nuestro proyecto**](#preparando-el-entorno-para-nuestro-proyecto)
+    - [¿Qué es Angular?](#qué-es-angular)
+    - [Creando nuestro proyecto con Angular CLI](#creando-nuestro-proyecto-con-angular-cli)
+    - [¿Qué es Firebase? Implementando Firebase en nuestro proyecto](#qué-es-firebase-implementando-firebase-en-nuestro-proyecto)
+    - [Diferencias entre Angular, React, Vue](#diferencias-entre-angular-react-vue)
 
 ## **Fundamentos de TypeScript**
 
@@ -431,3 +436,116 @@ class P {
 const p = new P();
 p.greet('Hola','Enrique');
 ```
+
+## **Preparando el entorno para nuestro proyecto**
+
+### ¿Qué es Angular?
+
+Desarrollado por Google, Angular es más que un **framework**, es una plataforma que nos da la posibilidad de desarrollar aplicaciones web como aplicaciones mobile. Además, es un framework de estructura que nos va a brindar funcionalidades para extender el template de nuestra aplicación.
+
+Algunas ventajas que trae Angular son:
+
+- Rapidez.
+- Mayor estructura y control del proyecto.
+- SPA
+- Gran comunidad que ayuda con cualquier problema.
+
+### Creando nuestro proyecto con Angular CLI
+
+Para preparar nuestro entorno de trabajo lo primero que debemos hacer es instalar *Node.js*. Una vez tenemos instalado Node en nuestro computador, debemos instalar el CLI de Angular mediante el comando:
+
+```bash
+npm install -g @angular/cli
+```
+
+Ya que tenemos listo el CLI, creamos nuestro proyecto con el siguiente comando y contestando las preguntas de configuración que nos haga:
+
+```bash
+ng new typescript-platzi
+```
+
+PARA INICIAR EL SERVIDOR PONEMOS EN CONSOLA
+
+```bash
+ng serve
+```
+
+### ¿Qué es Firebase? Implementando Firebase en nuestro proyecto
+
+Firebase es un SaaS de Google que nos ayuda en la creación de aplicaciones web y móvil. Firebase nos brinda una opción sencilla y rápida para nuestra base de datos y backend.
+
+Dentro de Firebase podemos tener bases de datos en tiempo real o realtime databases. Podemos usar Firebase independientemente del lenguaje o framework en el que estemos trabajando.
+
+Para añadir Firebase a nuestro proyecto debemos instalar algunas dependencias con el comando:
+
+**Antes:**
+
+```bash
+npm i -s firebase angularfire2
+```
+
+**Ahora:**
+
+```bash
+ng add @angular/fire@next
+```
+
+**Luego pide actualizar angular.json.**
+
+```bash
+ng update
+```
+Y en app.module.ts
+
+```ts
+import { AngularFireModule} from '@angular/fire/compat'
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AppRoutingModule
+  ],
+  ```
+
+### Diferencias entre Angular, React, Vue
+
+Cuando vamos iniciando en el mundo del front-end o simplemente estamos creando un nuevo proyecto nos encontraremos con una importante pregunta:
+
+*¿Qué framework debo utilizar?*
+
+Lo primero que te llega a la mente va a ser los tres frameworks más populares:
+
+**Angular**
+Si tienes un proyecto complejo y robusto Angular es tu mejor opción ya que al estar pensado en trabajar con TypeScript ofrece una gran robustez, estructura y control.
+
+Angular CLI es el CLI más completo para trabajar.
+
+Desventajas:
+
+- Al ser un framework tan robusto su curva de aprendizaje es muy elevada y compleja.
+- Tendremos código repetitivo que genera archivos muy grandes.
+
+**React**
+
+Ventajas:
+
+- Creado por Facebook, ofrece una gran flexibilidad para trabajar basado en componentes.
+- Cuenta con una gran comunidad, por lo tanto muchos problemas con los que te encuentres ya habrán sido resueltos por alguien.
+
+Desventajas:
+
+- Hay muchas formas de resolver un mismo problema, por lo tanto hay miles de librerías y tal vez pocas sean la solución correcta.
+
+**Vue**
+
+También está basado en componentes, cuenta con una gran usabilidad y una curva de aprendizaje muy fácil.
+
+Su mayor desventaja es que al ser muy nuevo, su comunidad es muy nueva y es probable que los problemas con los que te encuentres tendrás que crear tu propia solución.
+
+Ningún framework es mejor que el otro, cada uno cumple una funcionalidad distinta y cuenta con sus propias ventajas y desventajas.
