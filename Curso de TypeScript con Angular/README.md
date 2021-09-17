@@ -19,6 +19,7 @@
     - [Creando nuestro proyecto con Angular CLI](#creando-nuestro-proyecto-con-angular-cli)
     - [¿Qué es Firebase? Implementando Firebase en nuestro proyecto](#qué-es-firebase-implementando-firebase-en-nuestro-proyecto)
     - [Diferencias entre Angular, React, Vue](#diferencias-entre-angular-react-vue)
+  - [**Desarrollo de la aplicacion**](#desarrollo-de-la-aplicacion)
 
 ## **Fundamentos de TypeScript**
 
@@ -493,6 +494,12 @@ ng add @angular/fire@next
 **Luego pide actualizar angular.json.**
 
 ```bash
+sudo npm update
+```
+
+**Luego actualizar**
+
+```bash
 ng update
 ```
 Y en app.module.ts
@@ -549,3 +556,5 @@ También está basado en componentes, cuenta con una gran usabilidad y una curva
 Su mayor desventaja es que al ser muy nuevo, su comunidad es muy nueva y es probable que los problemas con los que te encuentres tendrás que crear tu propia solución.
 
 Ningún framework es mejor que el otro, cada uno cumple una funcionalidad distinta y cuenta con sus propias ventajas y desventajas.
+
+## **Desarrollo de la aplicacion**
