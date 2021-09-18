@@ -20,6 +20,7 @@
     - [¿Qué es Firebase? Implementando Firebase en nuestro proyecto](#qué-es-firebase-implementando-firebase-en-nuestro-proyecto)
     - [Diferencias entre Angular, React, Vue](#diferencias-entre-angular-react-vue)
   - [**Desarrollo de la aplicacion**](#desarrollo-de-la-aplicacion)
+    - [Creacion de las interfaces](#creacion-de-las-interfaces)
 
 ## **Fundamentos de TypeScript**
 
@@ -558,3 +559,42 @@ Su mayor desventaja es que al ser muy nuevo, su comunidad es muy nueva y es prob
 Ningún framework es mejor que el otro, cada uno cumple una funcionalidad distinta y cuenta con sus propias ventajas y desventajas.
 
 ## **Desarrollo de la aplicacion**
+
+### Creacion de las interfaces
+
+Tip: Para tener una buena estructura de nuestro proyecto es recomendable crear una interfaz por cada entidad que tenga el proyecto!
+
+Para esto creamos una carpeta **interfaces** dentro de la carpeta app.
+
+**Enums**
+
+Las enumeraciones nos permiten definir un conjunto de constantes con nombre. El uso de enumeraciones puede facilitar la documentación de la intención o crear un conjunto de casos distintos. TypeScript proporciona enumeraciones numéricas y basadas en cadenas.
+
+Enumeraciones numéricas
+Primero comenzaremos con enumeraciones numéricas, que probablemente sean más familiares si viene de otros idiomas. Se puede definir una enumeración usando la enum palabra clave.
+
+Ejemplo
+
+```ts
+enum Direction {
+    Up = 1,
+    Down,
+    Left,
+    Right,
+}
+```
+
+Arriba, tenemos una enumeración numérica donde Up se inicializa con 1. Todos los siguientes miembros se incrementan automáticamente a partir de ese punto. En otras palabras, Direction.Up tiene el valor 1, Downtiene 2, Left tiene 3 y Right tiene 4.
+
+Si quisiéramos, podríamos dejar los inicializadores por completo:
+
+```ts
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right,
+}
+```
+
+Aquí, Up tendría el valor 0, Down tendría 1, etc. Este comportamiento de incremento automático es útil para los casos en los que no nos interesen los valores de los miembros, pero sí nos importa que cada valor sea distinto de otros valores en la misma enumeración.
