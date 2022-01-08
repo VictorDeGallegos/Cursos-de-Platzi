@@ -11,6 +11,10 @@
     - [Creacion de la primer App](#creacion-de-la-primer-app)
     - [Introducción al template system](#introducción-al-template-system)
     - [Patrones de diseño y Django](#patrones-de-diseño-y-django)
+  - [**Vistas**](#vistas-1)
+    - [La M en el MTV](#la-m-en-el-mtv)
+    - [El ORM de Django](#el-orm-de-django)
+    - [Implementación del modelo de usuarios de Instagram](#implementación-del-modelo-de-usuarios-de-instagram)
 
 ## **Introduccion**
 
@@ -124,3 +128,102 @@ Es el encargado de manejar la lógica y sintaxis de la información que se va a 
 Su función es solo suministrar datos al template
  
 Manda la información necesaria el template para que este pueda manejar los datos y presentarlos de una manera correcta.
+
+## **Vistas**
+
+### La M en el MTV
+
+El Modelo en Django usa diferentes opciones para conectarse a múltiples bases de datos relacionales, entre las que se encuentran: SQLite, PostgreSQL, Oracle y MySQL.
+Para la creación de tablas, Django usa la técnica del ORM (Object Relational Mapper), una abstracción del manejo de datos usando OOP.
+
+**created**
+—> *auto_now_add* En cuanto se cree una instancia de ésta tabla en la base de datos, le va a cargar la fecha en la que se creó.
+
+**modified**
+—> *auto_now* Le guarda la fecha en la que se editó por última vez.
+
+```pyhton
+python manage.py makemigrations
+```
+Va a buscar los cambios en nuestros modelos y los va a reflejar en un archivo.
+```python
+python manage.py migrate
+```
+Va a aplicar esos cambios en nuestra base de datos.
+
+### El ORM de Django
+
+ORM: Object-relational mapping. Es el encargado de permitir
+el acceso y control de una base de datos relacional a través de
+una abstracción a clases y objetos.
+
+### Implementación del modelo de usuarios de Instagram
+
+Las opciones que Django propone para implementar Usuarios personalizados son:
+- Usando el Modelo proxy
+- Extendiendo la clase abstracta de Usuario existente
+
+Para el presente proyecto debemos crear los campos de usuario:
+
+- 1 website
+- 2 biography
+- 3 phone_number
+- 4 profile picture
+- 5 created
+- 6 modified
+- 7 Luego debemos crear la app que se llamará users
+
+```python
+sudo python3 manage.py startapp
+```
+Crear el modelo
+Se debe importar lo que necesitamos
+
+```python
+from django.contrib.auth.models import User
+```
+
+Luego se crea los campos adicionales que se necesitan según el proyecto
+
+```python
+class Profle (models.Model):
+    """Profile Model."""
+    """Proxy model that extends the base data with other information"""
+    user =models.OneToOneField(User,on_delete=models.CASCADE)
+    website=models.URLField(max_length=200,blank=True)
+    biography=models.TextField(blank=True)
+    phone_number=models.CharField(max_length=20,blank=True)
+    picture=models.ImageField(
+        upload_to='users/pictures',
+        blank=True,
+        null=True
+    )
+    create=models.DateTimeField(auto_now_add=True)
+    modified=models.DateTimeField(auto_now=True)
+
+
+    def __str__(self):
+        """Return username."""
+        return self.user.username
+  ```
+
+Posterior a eso dirigirse al archivo de settings.py y así como se instaló post se va a instalar users
+
+Para que funcione el campo ImageField se debe instalar la librería Pillow y se lo hace de la siguiente manera
+
+```
+sudo pip install Pillow
+```
+
+Después ejecutar para que se hagan efecto las migraciones
+
+```python
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
+
+Y para ingresar al administrador de django crear el super usuario
+
+```python
+python3 manage.py createsuperuser
+```
