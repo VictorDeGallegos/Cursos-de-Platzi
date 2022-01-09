@@ -15,6 +15,9 @@
     - [La M en el MTV](#la-m-en-el-mtv)
     - [El ORM de Django](#el-orm-de-django)
     - [Implementación del modelo de usuarios de Instagram](#implementación-del-modelo-de-usuarios-de-instagram)
+  - [Templates, auth y middlewares](#templates-auth-y-middlewares)
+    - [Templates y archivos estáticos](#templates-y-archivos-estáticos)
+    - [Middlewares](#middlewares)
 
 ## **Introduccion**
 
@@ -227,3 +230,31 @@ Y para ingresar al administrador de django crear el super usuario
 ```python
 python3 manage.py createsuperuser
 ```
+
+## Templates, auth y middlewares
+
+###  Templates y archivos estáticos
+
+Los templates quedarán definidos en un nuevo folder que llamaremos /templates/.
+
+El concepto de archivos estáticos en Django, son archivos que se usan a través de la aplicación para pintar los datos. Pueden ser archivos de imagen, audio y video, o archivos css y scripts js.
+
+Para servir archivos estáticos, nos apoyamos en STATIC_ROOT y STATIC_URLS.
+
+### Middlewares
+
+Los Middlewares tienen el siguiente orden:
+
+- SecurityMiddleware: Se encarga de comprobar todas las medidas de seguridad, las variables de settings relacionadas con Https, Auth, entre otros.
+
+- SessionMiddleware: Se encarga de validar una sesión.
+
+- CommonMiddleware: Se encarga de verificar componentes comunes como lo es el debug.
+
+- CsrfViewMiddleware: Se encarga de toda la validación correspondiente a CSRF. Éste nos permite utilizar el tag {% csrf_token %} y es el que inserta el token de seguridad en cada formulario.
+
+- AuthenticationMiddleware: Nos permite agregar request.user desde las vistas.
+
+- MessageMiddleware: Pertenece al Framework de mensajes de Django, y permite pasar un mensaje sin necesidad de mantener un estado en la base de datos o en memoria.
+
+- XFrameOptionsMiddleware: Middleware de seguridad.
