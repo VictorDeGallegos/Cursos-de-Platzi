@@ -15,9 +15,11 @@
     - [La M en el MTV](#la-m-en-el-mtv)
     - [El ORM de Django](#el-orm-de-django)
     - [Implementación del modelo de usuarios de Instagram](#implementación-del-modelo-de-usuarios-de-instagram)
-  - [Templates, auth y middlewares](#templates-auth-y-middlewares)
+  - [**Templates, auth y middlewares**](#templates-auth-y-middlewares)
     - [Templates y archivos estáticos](#templates-y-archivos-estáticos)
     - [Middlewares](#middlewares)
+  - [**Forms**](#forms)
+    - [Formularios de Django](#formularios-de-django)
 
 ## **Introduccion**
 
@@ -231,7 +233,7 @@ Y para ingresar al administrador de django crear el super usuario
 python3 manage.py createsuperuser
 ```
 
-## Templates, auth y middlewares
+## **Templates, auth y middlewares**
 
 ###  Templates y archivos estáticos
 
@@ -258,3 +260,22 @@ Los Middlewares tienen el siguiente orden:
 - MessageMiddleware: Pertenece al Framework de mensajes de Django, y permite pasar un mensaje sin necesidad de mantener un estado en la base de datos o en memoria.
 
 - XFrameOptionsMiddleware: Middleware de seguridad.
+
+## **Forms**
+
+### Formularios de Django 
+
+La clase utilitaria para formularios de Django nos ayuda a resolver mucho del trabajo que se realiza de forma repetitiva. La forma de implementarla es muy similar a la implementación de la clase models.model.
+
+Algunas de las clases disponibles en Django al implementar form, son:
+
+- BooleanField
+- CharField
+- ChoiceField
+- TypedChoiceField
+- DateField
+- DateTimeField
+- DecimalField
+- EmailField
+- FileField
+- ImageField"
