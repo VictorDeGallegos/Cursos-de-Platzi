@@ -143,7 +143,7 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [BASE_DIR / 'static']
-MEDIA_URL = '/media/'
+MEDIA_URL = '/static/'
 
 LOGIN_URL = '/users/login/'
 
