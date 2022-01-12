@@ -5,20 +5,14 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col-6 p-4" id="profile-box">
-      <form action="{% url 'update_profile' %}" method="POST" enctype="multipart/form-data">
+      <form action="{% url 'users:update' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
         <div class="media">
-          {% if request.user.profile.picture %}
-          <div
-            class="container rounded-circle"
-            style="width: 60px;
-                height: 60px;
-                background-image: url('{{request.user.profile.picture.url}}');
-                background-size: cover;"
-          ></div>
-          {% else %}
-          <img src="{% static 'img/default-profile.png' %}" class="rounded-circle" width="30" alt="Default profile picture" />
+          {% if profile.picture %}
+          <img src="{{ profile.picture.url }}" class="rounded-circle" height="50" />
+          {% else%}
+          <img src="{% static 'img/default-profile.png' %}" class="rounded-circle" height="50" />
           {% endif %}
 
           <div class="media-body">

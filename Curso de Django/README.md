@@ -20,6 +20,8 @@
     - [Middlewares](#middlewares)
   - [**Forms**](#forms)
     - [Formularios de Django](#formularios-de-django)
+  - [**Class-based-views**](#class-based-views)
+    - [Class-based-views](#class-based-views-1)
 
 ## **Introduccion**
 
@@ -279,3 +281,10 @@ Algunas de las clases disponibles en Django al implementar form, son:
 - EmailField
 - FileField
 - ImageField"
+
+## **Class-based-views**
+
+Veamos de qué forma optimizamos el proceso de creación de nuestras apps de forma que no repitamos código. Para ver cuál es el concepto de class based views.
+
+Las vistas también pueden ser clases, que tienen el objetivo de evitar la repetición de tareas como mostrar los templates, son vistas genéricas que resuelven problemas comunes
+### Class-based-views
